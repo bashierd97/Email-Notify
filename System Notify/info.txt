@@ -1,0 +1,10 @@
+# ENTER YOUR WEATHER API KEY HERE
+API KEY HERE (Will be 32 Characters)
+# ENTER YOUR CURRENT CITY HERE
+City Name Here (i.e.: San Diego)
+# ENTER THE SENDER EMAIL HERE [Gmail Domain]
+Your Test Email Address Here (i.e: bash.test@gmail.com)
+# ENTER THE SENDER EMAIL PASSWORD HERE
+Your Test Email Password Here (i.e: password)
+# ENTER THE RECIEVER EMAIL HERE (YOUR REAL EMAIL)
+Your Real Email here (i.e.: bdahman@gmail.com)
