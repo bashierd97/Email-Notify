@@ -42,3 +42,20 @@ bdahman.test@gmail.com <br />
 password90 <br />
 #ENTER THE RECIEVER EMAIL HERE (YOUR REAL EMAIL) <br />
 bashierd97@gmail.com <br />
+
+### Install the Proper Modules
+
+To install the required modules use ```pip install -r required_modules.txt```
+
+## Automate Script to execute every Midnight 
+
+**_Linux_**
+As mentioned before I used my Raspberry Pi Zero W, to allow my script to run every night at 12:00 AM. On a Linux Machine, you can easily do this by opening your command line and typing ```crontab -e``` (no need for the .bat file) and inserting a new line as shown:
+```0 0 * * *  python3 /home/pi/Projects/system_notif.py``` of course, you may have to replace python3 to wherever your python3 executable is on your machine. Unless it's on your system PATH, then you should be fine with just having "python3" and change /home/pi/Projects/system_notif.py to /wherever/the/path/is_to/system_notify.py. The 0 0 * * * means at exactly, 12:00 AM at midnight run the following commands, every day.
+
+Be sure to check the cron job is successfully running ```crontab -l```, and see if the command is correct.
+
+**_Windows_**
+On a Windows machine, right click on 'notify_schedule.bat' and click edit. Choose your preferred editor, I used Notepad. From there you'll see the following two lines ```"python3" "C:\Users\bashi\Desktop\system_notify.py"```, if 'python3' is not on your system PATH, be sure to find python3.exe on your machine, and substitute the ENTIRE path with python3. Also, substitute the path to system_notify.py to wherever it's located on your machine, and save the editted file.
+
+Following that, in your Windows search bar, search for Task Scheduler and **Run as Administrator**. Once open, under the Actions tab, click Create Basic Task, name your task to whatever you'd like, you may put a brief description if you'd want as well. Following that, set the Trigger as Daily, and have it start on the following day at 12:00:00 AM (example, if today is 8/1/20, I set the start to 8/2/20, since midnight is the next day technically). Under Action, have it as "Start a Program", locate your notify_schedule.bat file and select it. On the Finish section, make sure everything looks correct and hit Finish and TADA! Every night at midnight the script will run!
